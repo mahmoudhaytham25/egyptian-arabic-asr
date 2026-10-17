@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Dataset pipeline artifacts (regenerate by running the notebooks)
+work/
+data/batches/
+data/merged_output.csv
+data/audio/
+data/train.csv
+data/val.csv
+
+# Model checkpoints
+wav2vec2-egyptian-arabic/
+wav2vec2-arabic-model/
+wav2vec2-arabic-processor/
+*.pt
+*.bin
+*.safetensors
+
+# Local-only interview prep notes — never commit
+INTERVIEW_CHEATSHEET.md

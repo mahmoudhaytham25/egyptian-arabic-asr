@@ -1,0 +1,28 @@
+# Dataset pipeline (notebooks 01–03)
+yt-dlp>=2024.10
+pydub>=0.25
+spleeter>=2.4
+openai-whisper>=20231117
+SpeechRecognition>=3.10
+pandas>=2.0
+matplotlib>=3.7
+
+# Training (notebook 05)
+torch>=2.1
+torchaudio>=2.1
+transformers>=4.36
+librosa>=0.10
+datasets>=2.16
+evaluate>=0.4
+jiwer>=3.0
+numpy>=1.24
+tqdm>=4.66
+
+# Serving (serve/)
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+requests>=2.31
+
+# Notebook runtime
+jupyter>=1.0
