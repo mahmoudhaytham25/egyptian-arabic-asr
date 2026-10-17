@@ -1,5 +1,15 @@
 # Egyptian Arabic ASR — wav2vec 2.0
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Python 3](https://img.shields.io/badge/python-3-3776ab?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/jupyter-notebooks-f37626?logo=jupyter&logoColor=white)
+
+![PyTorch](https://img.shields.io/badge/pytorch-2-ee4c2c?logo=pytorch&logoColor=white)
+![HF wav2vec2-xlsr-53](https://img.shields.io/badge/hf-wav2vec2--xlsr--53-ffd21e?logo=huggingface&logoColor=black)
+![Whisper pseudo-labels](https://img.shields.io/badge/whisper-pseudo--labels-412991?logo=openai&logoColor=white)
+![FastAPI](https://img.shields.io/badge/serve-fastapi-009688?logo=fastapi&logoColor=white)
+![Kaggle](https://img.shields.io/badge/trained%20on-kaggle-20beff?logo=kaggle&logoColor=white)
+
 End-to-end speech-to-text for **Egyptian Arabic**: scraping and auto-labelling a
 dataset from YouTube, fine-tuning `wav2vec2-large-xlsr-53` with CTC, and serving
 the model behind a FastAPI endpoint.
