@@ -4,8 +4,10 @@ End-to-end speech-to-text for **Egyptian Arabic**: scraping and auto-labelling a
 dataset from YouTube, fine-tuning `wav2vec2-large-xlsr-53` with CTC, and serving
 the model behind a FastAPI endpoint.
 
-Built as a team of two — Mahmoud Haytham & Mostafa Sultan — for a speech
-processing course project. Full write-up in [`docs/report.pdf`](docs/report.pdf).
+Built as a team of two — [Mahmoud Haytham](https://github.com/mahmoudhaytham25)
+& [Mostafa AbdelAtty Sultan](https://github.com/MostafaAbdelAttySultan) — for
+a speech processing course project. Full write-up in
+[`docs/report.pdf`](docs/report.pdf).
 
 ## Pipeline
 
@@ -112,7 +114,7 @@ Classical speech-DSP analyses (same course, earlier assignments) under
 ## Credits
 
 - **Mahmoud Haytham** — [github.com/mahmoudhaytham25](https://github.com/mahmoudhaytham25)
-- **Mostafa Sultan** — teammate
+- **Mostafa AbdelAtty Sultan** — [github.com/MostafaAbdelAttySultan](https://github.com/MostafaAbdelAttySultan)
 
 Mozilla Common Voice Arabic corpus · Whisper pseudo-labelling · Spleeter source
 separation · HuggingFace `wav2vec2` checkpoints.
