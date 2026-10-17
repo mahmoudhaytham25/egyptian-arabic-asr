@@ -68,8 +68,35 @@ python client.py my_audio.wav
 
 `POST /transcribe/` accepts any ffmpeg-decodable audio, resamples to 16 kHz mono,
 runs the CTC model, and returns the decoded transcript. `GET /health` for a
-liveness check. The model directory is produced by the last cell of notebook 05
-(`model.save_pretrained(OUTPUT_DIR)`).
+liveness check.
+
+### Model checkpoint
+
+The fine-tuned weights (~3 GB, `wav2vec2-arabic-model-best-val`) are **not**
+committed — they're hosted as a Kaggle dataset:
+[kaggle.com/datasets/mahmoudhaytham/speech-processing-final-model](https://www.kaggle.com/datasets/mahmoudhaytham/speech-processing-final-model).
+`MODEL_DIR` should point at a directory containing both the model and processor
+files (exactly what `model.save_pretrained` + `processor.save_pretrained` into
+`OUTPUT_DIR` in notebook 05 produces).
+
+Quick check on Kaggle itself (attach the dataset to a notebook):
+
+```python
+import torch, torchaudio, librosa, numpy as np
+from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
+
+MODEL_DIR = "/kaggle/input/speech-processing-final-model/wav2vec2-arabic-model-best-val"
+model = Wav2Vec2ForCTC.from_pretrained(MODEL_DIR)
+processor = Wav2Vec2Processor.from_pretrained(MODEL_DIR)  # or the sibling processor dir in the dataset
+model.eval()
+
+speech, sr = torchaudio.load("/kaggle/input/<your-test-clip>.wav")
+speech = librosa.resample(np.asarray(speech[0].numpy()), orig_sr=sr, target_sr=16000)
+input_values = processor(speech, sampling_rate=16000, return_tensors="pt").input_values
+with torch.no_grad():
+    pred = torch.argmax(model(input_values).logits, dim=-1)
+print(processor.batch_decode(pred)[0])
+```
 
 ## Extras
 
